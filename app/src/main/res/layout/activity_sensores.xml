@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3E3E3E"
+    tools:context=".sensores">
+
+        <Button
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar Sensores"
+            android:onClick="ListarSensores"
+            android:textColor="#000000"
+            />
+
+        <Button
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:onClick="LUMINOSIDADE"
+            android:text="SENSOR LUMINOSIDADE"/>
+
+        <Button
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:onClick="PROXIMIDADE"
+            android:text="SENSOR PROXIMIDADE (GPS)"/>
+
+
+        <Button
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:onClick="UMIDADE"
+            android:text="SENSOR UMIDADE"/>
+
+        <Button
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:id="@+id/postRequest"
+            android:onClick="postRequest"
+            android:text="Enviar dados" />
+
+</LinearLayout>

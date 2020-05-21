@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3E3E3E"
+    tools:context=".MainActivity">
+
+
+        <ImageButton
+            android:paddingTop="50dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:background="#3E3E3E"
+            android:id="@+id/brasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/brasil"
+            android:onClick="brasileiro"/>
+
+        <ImageButton
+            android:paddingTop="25dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:background="#3E3E3E"
+            android:id="@+id/ingles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/estadosunidos"
+            android:onClick="ingles"/>
+
+        <ImageButton
+            android:paddingTop="25dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:background="#3E3E3E"
+            android:id="@+id/frances"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/franca"
+            android:onClick="frances"/>
+
+        <ImageButton
+            android:paddingTop="25dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:background="#3E3E3E"
+            android:id="@+id/espanhol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/espanhol"
+            android:onClick="espanhol"/>
+
+</LinearLayout>

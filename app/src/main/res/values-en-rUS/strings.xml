@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">IOT Web Data</string>
-    <string name="sensores">sensors</string>
+    <string name="sensores">Sensors</string>
+    <string name="listar_sensores">List sensors</string>
+    <string name="sensor_luminosidade">LUMINOSITY SENSOR</string>
+    <string name="sensor_proximidade_gps">PROXIMITY SENSOR (GPS)</string>
+    <string name="sensor_umidade">HUMIDITY SENSOR</string>
+    <string name="enviar_dados">Send data</string>
 </resources>

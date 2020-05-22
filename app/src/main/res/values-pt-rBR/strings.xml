@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Web Dados IOT</string>
-    <string name="sensores">sensores</string>
+<string name="app_name">Web Dados IOT</string>
+<string name="sensores">Sensores</string>
+<string name="listar_sensores">LISTAR SENSORES</string>
+<string name="sensor_luminosidade">SENSOR LUMINOSIDADE</string>
+<string name="sensor_proximidade_gps">SENSOR PROXIMIDADE (GPS)</string>
+<string name="sensor_umidade">SENSOR UMIDADE</string>
+<string name="enviar_dados">Enviar dados</string>
 </resources>

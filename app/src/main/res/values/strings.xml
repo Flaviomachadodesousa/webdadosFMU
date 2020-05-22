@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Web Dados IOT</string>
     <string name="sensores">Sensores</string>
+    <string name="listar_sensores">Listar Sensores</string>
+    <string name="sensor_luminosidade">SENSOR LUMINOSIDADE</string>
+    <string name="sensor_proximidade_gps">SENSOR PROXIMIDADE (GPS)</string>
+    <string name="sensor_umidade">SENSOR UMIDADE</string>
+    <string name="enviar_dados">Enviar dados</string>
 </resources>

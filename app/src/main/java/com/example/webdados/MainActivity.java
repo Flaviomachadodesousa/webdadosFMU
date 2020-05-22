@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
         /* Toast toast = Toast.makeText(getApplicationContext(), "Portugues", Toast.LENGTH_LONG);
         toast.show(); */
 
-        setLocale("pt");
+        setLocale("br");
+
 
     }
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         /* Toast toast = Toast.makeText(getApplicationContext(), "Inglês", Toast.LENGTH_LONG);
         toast.show(); */
 
-        setLocale("en");
+        setLocale("us");
 
     }
 

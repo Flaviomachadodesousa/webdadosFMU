@@ -1,6 +1,6 @@
-# webdadosFMU
- Projeto sensores para webservice.
- <br>TÍTULO DO PROJETO
+# WebDadosFMU
+ <br>
+ # WebDadosFMU
  <br>NOME DOS INTEGRANTES (NÃO PRECISA DO RA)
  <br>DESCRIÇÃO DO PROJETO
  <br>FUNCIONALIDADES

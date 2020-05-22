@@ -2,10 +2,10 @@
 
 Projeto WebDadosFMU 
 
-## Usage
+## Integrantes
 Flavio Machado de Sousa
 
-##Funcionalidades
+## Funcionalidades
 
 
-##Recursos utilizados
+## Recursos utilizados

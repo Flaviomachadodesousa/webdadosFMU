@@ -1,12 +1,18 @@
 package com.example.webdados;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,11 +36,11 @@ import java.util.Map;
 
 public class sensores extends AppCompatActivity {
     SensorManager mSensorManager;
-    Sensor mLuz, mUmidade, mAcelerometro;
+    Sensor mLuz, mUmidade, mAcelerometro, mProx, mGravidade;
     private static final int PERMISSION_REQUEST_CODE = 1;
     private Location location;
-    //private LocationManager locationManager;
     double latitude, longitude;
+
 
 
     @Override
@@ -42,11 +48,8 @@ public class sensores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensores);
 
-        Log.i("Mensagem", "Ola mundo");
         //pedirPermissao();
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-
-        Button postRequest = findViewById(R.id.postRequest);
 
     }
 
@@ -109,12 +112,6 @@ public class sensores extends AppCompatActivity {
     /*              FIM UMIDADE                                 */
     //----------------------------------------------------------//
 
-    public void PROXIMIDADE(View view) {
-
-        Toast toast = Toast.makeText(getApplicationContext(), "Enviado para Web Service Proximidade", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
 
     public void postRequest(View view) {
         RequestQueue requestQueue = Volley.newRequestQueue(sensores.this);
@@ -148,30 +145,90 @@ public class sensores extends AppCompatActivity {
 
         requestQueue.add(stringRequest);
 
-        /*
-        Toast toast = Toast.makeText(getApplicationContext(), "Tentando enviar", Toast.LENGTH_LONG);
-        toast.show();
-
-        OkHttpClient client = new OkHttpClient();
-        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-        JSONObject actualdata = new JSONObject();
-        try {
-            actualdata.put("test","teste");
-            actualdata.put("teste",24);
-        } catch (JSONException e){
-            Log.d("OKHTTPS","JSON ERRO");
-            e.printStackTrace();
-        }
-        RequestBody body = RequestBody.create(JSON,actualdata.toString());
-        Request newReq = new Request.Builder()
-                .url("https://webandroidservice.000webhostapp.com/send.php?path=sensores")
-                .post(body)
-                .build();
-        try {
-            Response response = client.newCall(newReq).execute();
-        }catch (IOException e){
-            e.printStackTrace();
-        }*/
     }
+    public void LOCALIZAR(View view) {
+
+        pedirPermissao();
+
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
+        switch (requestCode){
+            case 1: {
+                if(grantResults.length > 0 &&
+                        grantResults[0]== PackageManager.PERMISSION_GRANTED)
+                    configurarServico();
+                else
+                    Toast.makeText(this, "Não vai funcionar!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void PROXIMIDADE(View view) {
+        mProx = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        mSensorManager.registerListener(new ProxSensor(), mProx, SensorManager.SENSOR_DELAY_FASTEST);
+    }
+
+    class ProxSensor implements SensorEventListener {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+        public void onSensorChanged(SensorEvent event) {
+            float vl = event.values[0];
+            Log.i("Sensores","Proximidade: "+vl);
+
+        }
+    }
+
+    private void pedirPermissao(){
+        if( ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION) !=
+                        PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                    }, 1);
+        }
+        else
+            configurarServico();
+    }
+
+    public void configurarServico(){
+        try {
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            LocationListener locationListener = new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    atualizar(location);
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {  }
+
+                @Override
+                public void onProviderDisabled(String provider) {  }
+            };
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        }catch(SecurityException ex){
+            Log.i("GPS","erro ");
+        }
+    }
+
+    public void atualizar(Location location){
+        double latPoint = location.getLatitude();
+        double longPoint = location.getLongitude();
+
+        Log.i("Sensores", "lat "+latPoint);
+        Log.i("Sensores", "lon "+longPoint);
+
+    }
+
+
 
 }

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         /* Toast toast = Toast.makeText(getApplicationContext(), "Portugues", Toast.LENGTH_LONG);
         toast.show(); */
 
-        setLocale("br");
+        setLocale("pt");
 
 
     }
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         /* Toast toast = Toast.makeText(getApplicationContext(), "Inglês", Toast.LENGTH_LONG);
         toast.show(); */
 
-        setLocale("us");
+        setLocale("en");
 
     }
 
@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration(); // Pegando catraca de configuracao.
         conf.locale = meuLocal; // Troca a localização de escrita.
+
+        getBaseContext().getResources().updateConfiguration(conf, getBaseContext().getResources().getDisplayMetrics());
 
         Intent intent = new Intent(this, sensores.class); // Chama outra tela.
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -5,6 +5,6 @@
     <string name="listar_sensores">LISTER LES CAPTEURS</string>
     <string name="sensor_luminosidade">CAPTEUR DE LUMINOSITÉ</string>
     <string name="sensor_proximidade_gps">CAPTEUR DE PROXIMITÉ (GPS)</string>
-    <string name="sensor_umidade">CAPTEUR D'HUMIDITÉ</string>
+    <string name="sensor_umidade">CAPTEUR D HUMIDITE</string>
     <string name="enviar_dados">Envoyer des données</string>
 </resources>

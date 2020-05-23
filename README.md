@@ -14,3 +14,10 @@ Aplicativo gerado com o Android Studio na linguagem java, as funcionalidades del
 realizar a leitura dos sensores enviado.
 
 ## Recursos utilizados
+**Servidor**
+<br>PHP com recursos de leitura e criação de Json
+<br>Bootstrap
+<br>Javascript
+<br>CSS
+<br>
+**Aplicativo**

@@ -3,7 +3,7 @@
 Aplicativo Web Dados FMU, aplicativo feito para realizar o envio de 3 sensores do celular(Luminosidade, Umidade, Localização(GPS)),
 o envio é realizado para o Web Service em PHP
 
-![alt text](https://i.ibb.co/DWFnSKm/index.jpg = 250x250)
+![alt text](https://i.ibb.co/DWFnSKm/index.jpg| width=50)
 
 ## Integrantes
  Flavio Machado de Sousa

@@ -6,8 +6,8 @@ o envio é realizado para o Web Service em PHP
 ![alt text](https://i.ibb.co/DWFnSKm/index.jpg)
 
 ## Integrantes
-Flavio Machado de Sousa
-Leonardo Vasconcelos Lopes Teixeira
+ Flavio Machado de Sousa
+ Leonardo Vasconcelos Lopes Teixeira
 
 ## Funcionalidades
 Aplicativo gerado com o Android Studio na linguagem java, as funcionalidades dele e o envio dos sensores para um Web Service e dentro do Web Service

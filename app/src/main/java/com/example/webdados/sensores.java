@@ -36,7 +36,7 @@ import java.util.Map;
 
 public class sensores extends AppCompatActivity {
     SensorManager mSensorManager;
-    Sensor mLuz, mUmidade, mAcelerometro, mProx, mGravidade;
+    Sensor mLuz, mUmidade, mAcelerometro, mProx;
     private static final int PERMISSION_REQUEST_CODE = 1;
     private Location location;
     double latitude, longitude;

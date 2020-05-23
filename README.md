@@ -15,9 +15,15 @@ realizar a leitura dos sensores enviado.
 
 ## Recursos utilizados
 **Servidor**
+<br>Endereco Servidor = https://webandroidservice.000webhostapp.com/index.php
 <br>PHP com recursos de leitura e criação de Json
 <br>Bootstrap
 <br>Javascript
-<br>CSS
-<br>
+<br>CSS<br>
+
 **Aplicativo**
+<br>Volley
+<br>Sensor de Luz
+<br>Sensor de Umidade
+<br>Sensor de Localização
+<br>Json
